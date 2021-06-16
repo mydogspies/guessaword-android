@@ -4,7 +4,7 @@ package com.mydogspies.guess_a_word.model;
 public class Word {
 
     private String word;
-    private String[] wordArray;
+    private char[] wordArray;
 
     public String getWord() {
         return word;
@@ -14,11 +14,11 @@ public class Word {
         this.word = word;
     }
 
-    public String[] getWordArray() {
+    public char[] getWordArray() {
         return wordArray;
     }
 
-    public void setWordArray(String[] wordArray) {
+    public void setWordArray(char[] wordArray) {
         this.wordArray = wordArray;
     }
 }
