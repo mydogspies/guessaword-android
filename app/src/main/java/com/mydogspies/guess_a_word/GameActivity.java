@@ -5,13 +5,14 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.mydogspies.guess_a_word.model.GameDataInterfaceImpl;
 import com.mydogspies.guess_a_word.model.Word;
 import com.mydogspies.guess_a_word.model.WordSingleton;
 import com.mydogspies.guess_a_word.model.MODE;
 
 public class GameActivity extends AppCompatActivity {
 
-    private Word word;
+    private GameDataInterfaceImpl gameDataIO = new GameDataInterfaceImpl();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +22,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void init() {
-        word = WordSingleton.getInstance().getWord();
-        System.out.println(word.getWord());
-        System.out.println(word.getWordArray());
-
-        Intent intent = getIntent();
 
     }
 }

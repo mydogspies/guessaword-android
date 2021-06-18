@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.mydogspies.guess_a_word.model.GameData;
+import com.mydogspies.guess_a_word.model.GameDataSingleton;
 import com.mydogspies.guess_a_word.model.MODE;
 import com.mydogspies.guess_a_word.model.Word;
 import com.mydogspies.guess_a_word.model.WordSingleton;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button wordEnterButton;
     private Button randomEnterButton;
     private Word word;
+    private GameData gameData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        // set a new instance for the singleton that will contain the chosen word
-        word = new Word();
-        WordSingleton singleton = WordSingleton.getInstance();
-        singleton.setWord(word);
+        // set a new instance for the singleton that will contain our game data object
+        gameData = new GameData();
+        GameDataSingleton singleton = GameDataSingleton.getInstance();
+        singleton.setGameData(gameData);
 
         initStartPage();
     }
